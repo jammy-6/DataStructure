@@ -43,7 +43,7 @@ public:
 int
 main()
 {
-  vector<int> nums = { 9, 7, 5, 3, 1, 0, 8, 4, 6, 2 };
+  vector<int> nums = {9, 8, 3, 7,888, 5, 6, 4, 1,1010,88,-32,0,};
   Merge merge;
   merge.mysort(nums, 0, nums.size() - 1);
   for (int num : nums)

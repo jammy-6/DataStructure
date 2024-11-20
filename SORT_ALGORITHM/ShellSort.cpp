@@ -8,35 +8,28 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Shell
-{
-public:
-  void mysort(vector<int>& nums)
-  {
-    int n = nums.size();
-    int gap = n / 2;
-    while (gap > 0) {
-      for (int j = gap; j < n; j++) {
-        int i = j;
-        while (i >= gap && nums[i] < nums[i - gap]) {
-          int temp = nums[i];
-          nums[i] = nums[i - gap];
-          nums[i - gap] = temp;
-          i -= gap;
+void shellSort(std::vector<int>& arr) {
+    int n = arr.size();
+    // 从 n/2 开始的间隔序列
+    for (int gap = n / 2; gap > 0; gap /= 2) {
+        // 对每个间隔进行插入排序
+        for (int i = gap; i < n; i++) {
+            int temp = arr[i];
+            int pos = i-gap;
+            while(pos>=0&&arr[pos]>temp){
+              arr[pos+gap] = arr[pos];
+              pos-=gap;
+            }
+            arr[pos+gap] = temp;
         }
-      }
-      gap /= 2;
     }
-  }
-};
-int
-main()
-{
-  vector<int> nums = { 9, 7, 5, 3, 1, 0, 8, 4, 6, 2 };
-  Shell shell;
-  shell.mysort(nums);
-  for (int num : nums) {
-    cout << num << " ";
-  }
-  return 0;
+}
+
+int main() {
+    std::vector<int> data = {9, 8, 3, 7,888, 5, 6, 4, 1,1010,88,-32,0,};
+    shellSort(data);
+    for(auto num : data) {
+        std::cout << num << " ";
+    }
+    return 0;
 }
