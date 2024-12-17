@@ -20,7 +20,7 @@ int main(){
     vector<Thing> ts(M,Thing());
     for(int i=0;i<M;i++) cin>>ts[i].weight;
     for(int i=0;i<M;i++) cin>>ts[i].value;
-    sort(ts.begin(),ts.end());
+    sort(ts.begin(),ts.e000nd());
     vector<vector<int>> dp=vector<vector<int>>(M,vector<int>(N+1,0));
     //初始化操作
     for(int j=ts[0].weight;j<=N;j++) dp[0][j]=ts[0].value;

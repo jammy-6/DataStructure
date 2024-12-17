@@ -1,10 +1,12 @@
 
 #include "TreeNode.h"
 #include <bits/stdc++.h>
+using namespace std;
 
 class Solution
 {
 private:
+  /// @brief 不断维护一个序列中的最大值
   class MyQueue
   { // 单调队列（从大到小）
   public:
